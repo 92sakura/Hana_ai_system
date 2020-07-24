@@ -4,11 +4,10 @@ body {
     color: #333333;
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
 }
-
 #header {
     width: 100%;
     height: 70px;
-    background-color: #333333;
+    background-color: #adff2f;
 }
 
 #content {
@@ -16,17 +15,42 @@ body {
     margin-top: 15px;
     padding-left: 3%;
 }
+#shohin_list th {
+	font-weight: bold;
+}
+table#shohin_list .code {
+    width: 10%;
+}
+table#shohin_list .bun {
+    width: 10%;
+}
+table#shohin_list .name {
+    width: 30%;
+}
+table#shohin_list .kana {
+    width: 15%;
+}
+table#shohin_list .tank {
+    width: 15%;
+}
+table#shohin_list .biko {
+    width: 20%;
+}
 h1 {
     width: 94%;
     padding-top: 17px;
     padding-left: 3%;
     font-size: 24px;
-    color: #eeeeee;
+    color: #800080;
 }
 
 h2 {
     font-size: 36px;
     margin-bottom: 15px;
+    color: #004000;
+}
+h3 {
+	font-size: 24px;
 }
 
 li {
@@ -56,6 +80,7 @@ table {
 th {
     width: 26%;
     padding: 10px 2%;
+    background-color: #9acd32;
 }
 
 td {
@@ -70,4 +95,5 @@ button {
 
 #footer {
     text-align: center;
+    background-color: #adff2f;
 }

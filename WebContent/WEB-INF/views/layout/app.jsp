@@ -11,7 +11,9 @@
     <body>
 		<div id="wrapper">
 			<div id="header">
-				<h1>愛フラワー　花屋システム</h1>
+				<h1>愛フラワー　花屋システム
+				<img src="<c:url value='/pic/APSPR_002.PNG' />" width="40" height="40" alt="ロゴ">
+				</h1>
 			</div>
 			<div id="content">
 				${param.content}

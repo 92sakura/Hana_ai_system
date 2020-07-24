@@ -3,7 +3,12 @@
 <!DOCTYPE html>
 <c:import url="../layout/app.jsp">
 	<c:param name="content">
-		<h2>愛フラワー管理システム</h2>
-		<p><a href="${pageContext.request.contextPath}/sholist">商品マスタメンテへ</a></p>
+		<h2>愛フラワーシステム</h2>
+		<h3><a href="${pageContext.request.contextPath}/shohin/index">１.商品マスタメンテ</a></h3>
+	<br>
+	<img src="<c:url value='/pic/img020.jpg' />" alt="花の写真です">
+	<br>
+	<br>
+	<br>
 	</c:param>
 </c:import>

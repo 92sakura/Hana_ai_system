@@ -10,7 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * -------------------------------------------------
  * Servlet implementation class TopPageIndexServlet
+ * -------------------------------------------------
+ * 【ＴＯＰ頁】
+ * この　@WebServlet("/index.html")　を記入する事で
+ * http://localhost:8080/Hana_ai_system
+ * のみでトップページにアクセスできるようになります
+ * -------------------------------------------------
  */
 @WebServlet("/index.html")
 public class TopPageIndexServlet extends HttpServlet {
