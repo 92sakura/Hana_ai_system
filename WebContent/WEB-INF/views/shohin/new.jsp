@@ -8,11 +8,24 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>商品マスタ　新規登録</h2>
-
-        <form method="POST" action="<c:url value='/shohin/create' />">
-            <c:import url="_form.jsp" />
-        </form>
+		<c:if test="${errors != null}">
+    		<div id="flush_error">
+        		登録済みの商品コードです。<br />
+        	<c:forEach var="error" items="${errors}">
+            ・<c:out value="${error}" /><br />
+        	</c:forEach>
+    		</div>
+		</c:if>
+        <c:choose>
+            <c:when test="${shohin != null}">
+                <form onsubmit="return false;" method="POST" action="<c:url value='/shohin/create' />">
+                    <c:import url="_form.jsp" />
+                </form>
+            </c:when>
+            <c:otherwise>
+                <h2>商品マスタ　データエラー</h2>
+            </c:otherwise>
+        </c:choose>
 
         <p><a href="<c:url value='/shohin/index' />">一覧に戻る</a></p>
 

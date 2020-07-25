@@ -37,7 +37,8 @@ public class ShohinNewServlet extends HttpServlet {
 */
 		request.setAttribute("_token",request.getSession().getId());
 		Hanamast h = new Hanamast();
-	    request.setAttribute("hanamast", h);
+	    request.setAttribute("shohin", h);
+        request.setAttribute("flg",request.getParameter("flg"));
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/shohin/new.jsp");
         rd.forward(request, response);

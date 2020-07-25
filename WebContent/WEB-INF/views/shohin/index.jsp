@@ -29,7 +29,8 @@
                         <td><c:out value="${shohin.getHanaTank()}" /></td>
                         <td><c:out value="${shohin.getHanaBiko()}" /></td>
                         <td>
-                            <a href="<c:url value='/shohin/show?id=${shohin.getHanaCode()}' />">詳細を表示</a>
+                            <a href="<c:url value='/shohin/edit?cd=${shohin.getHanaCode()}&flg=${1}' />">編集  </a>
+                            <a href="<c:url value='/shohin/destroy?cd=${shohin.getHanaCode()}&flg=${2}' />">削除</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -49,7 +50,7 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/shohin/new' />">商品の登録</a></p>
+        <p><a href="<c:url value='/shohin/new?flg=${0}' />">商品の登録</a></p>
 
 
 
