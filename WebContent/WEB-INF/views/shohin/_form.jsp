@@ -20,14 +20,16 @@
 			<tbody>
 				<tr>
 					<th>商品コード</th>
-					<td><c:choose>
+					<td>
+						<c:choose>
 							<c:when test="${flg=='0'}">
 								<input type="text" name="code" value="${shohin.getHanaCode()}" />
 							</c:when>
 							<c:otherwise>
 								<c:out value="${shohin.getHanaCode()}" />
 							</c:otherwise>
-						</c:choose></td>
+						</c:choose>
+					</td>
 				</tr>
 				<tr>
 					<th>分類</th>

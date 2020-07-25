@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Hanamast;
-
 /**
  * Servlet implementation class ShohinNewServlet 商品マスタの新規登録画面
  */
@@ -33,13 +31,12 @@ public class ShohinNewServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 /*
-* 商品マスタの新規登録画面
+* new の　jsp を呼ぶ
 */
-		request.setAttribute("_token",request.getSession().getId());
-		Hanamast h = new Hanamast();
-	    request.setAttribute("shohin", h);
-        request.setAttribute("flg",request.getParameter("flg"));
 
+		request.setAttribute("_token",request.getSession().getId());
+//jspから帰ってきた値のflgをそのままセットしている
+        request.setAttribute("flg",request.getParameter("flg"));
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/shohin/new.jsp");
         rd.forward(request, response);
 	}
