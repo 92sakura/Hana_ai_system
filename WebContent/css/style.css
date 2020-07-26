@@ -75,12 +75,12 @@ th {
 }
 #flush_error {
     width: 100%;
-    padding-top: 28px;
+    padding-top: 12px;
     padding-left: 2%;
-    padding-bottom: 28px;
+    padding-bottom: 12px;
     margin-bottom: 15px;
     color: #ffff80;
-    background-color: #0080ff;
+    background-color: #887787;
 }
 td {
     width: 66%;

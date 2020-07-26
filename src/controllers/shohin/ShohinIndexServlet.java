@@ -85,7 +85,7 @@ public class ShohinIndexServlet extends HttpServlet {
             	hana.setHanaBun(rs.getString("hanaBun"));
             	hana.setHanaName(rs.getString("hanaName"));
             	hana.setHanaKana(rs.getString("hanaKana"));
-            	hana.setHanaTank(rs.getInt("hanaTank"));
+            	hana.setHanaTank(rs.getString("hanaTank"));
             	hana.setHanaBiko(rs.getString("hanaBiko"));
 
             	so.add(hana);

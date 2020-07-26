@@ -6,7 +6,9 @@
     <c:param name="content">
 		<c:if test="${errors != null}">
     		<div id="flush_error">
-        		<c:out value="${errors}" />
+        <c:forEach var="error" items="${errors}">
+            ・<c:out value="${error}" /><br />
+        </c:forEach>
     		</div>
 		</c:if>
 		<c:if test="${flush_new != null}">

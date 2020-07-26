@@ -26,7 +26,7 @@
 								<input type="text" name="code" value="${shohin.getHanaCode()}" />
 							</c:when>
 							<c:otherwise>
-								<c:out value="${shohin.getHanaCode()}" />
+								<input type="text" name="code" value="${shohin.getHanaCode()}" readonly>
 							</c:otherwise>
 						</c:choose>
 					</td>

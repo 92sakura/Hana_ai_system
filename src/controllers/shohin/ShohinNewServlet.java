@@ -33,7 +33,7 @@ public class ShohinNewServlet extends HttpServlet {
 /*
 * new の　jsp を呼ぶ
 */
-
+		request.setAttribute("flush_new", null);
 		request.setAttribute("_token",request.getSession().getId());
 //jspから帰ってきた値のflgをそのままセットしている
         request.setAttribute("flg",request.getParameter("flg"));
