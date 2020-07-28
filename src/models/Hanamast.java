@@ -8,6 +8,9 @@ import java.sql.Statement;
 
 import javax.servlet.http.HttpServletRequest;
 
+/*
+ * 商品マスタ(Hana_master)に関するクラス
+ */
 public class Hanamast {
 
 	    private String hanaCode;
@@ -64,7 +67,9 @@ public class Hanamast {
 		public void setHanaBiko(String hanaBiko) {
 			this.hanaBiko = hanaBiko;
 		}
-		// 登録処理（Insert）
+/**********************
+ * 登録処理（Insert）
+ **********************/
 		public boolean Insert(){
             Connection con = null;
             Statement stmt = null;
@@ -122,11 +127,10 @@ public class Hanamast {
             		}
             	}
             }
-
-
-
 		}
-		// 更新 (Update)
+/**********************
+* 更新処理 (Update)
+***********************/
 		public boolean Update(){
             Connection con = null;
             Statement stmt = null;
@@ -184,13 +188,65 @@ public class Hanamast {
             		}
             	}
             }
-
 		}
-		// 削除
-		public void Delete(){
+/**********************
+* 削除処理 (Delete)
+***********************/
+		public boolean Delete(){
+            Connection con = null;
+            Statement stmt = null;
+            ResultSet rs = null;
+            try{
+            	// 1. ドライバのクラスをJava上で読み込む
+            	Class.forName("com.mysql.jdbc.Driver");
+            	// 2. DBと接続する
+            	con = DriverManager.getConnection(
+            			"jdbc:mysql://localhost/hanaya?useSSL=false",
+            			"root",
+            			"12345"
+            			);
+            	// 3. DBとやりとりする窓口（Statementオブジェクト）の作成
+            	stmt = con.createStatement();
+            	String sql = String.format("DELEE from Hana_master WHERE hanaCode = '%s' LIMIT 1",this.hanaCode);
+            	System.out.println(sql);
+//                stmt.execute(sql);
+            	return true;
+            } catch (SQLException e) {
+            	// DBとの処理で何らかのエラーがあった場合の例外
+            	e.printStackTrace();
+            	return false;
+            } catch (ClassNotFoundException e) {
+            	// JDBCドライバを読み込めないエラーがあった場合の例外
+            	e.printStackTrace();
+            	return false;
+            } finally {
+            	// 7. 接続を閉じる
+            	if (rs != null) {
+            		try {
+            			rs.close();
+            		} catch (SQLException e) {
+            			e.printStackTrace();
+            		}
+            	}
+            	if (stmt != null) {
+            		try {
+            			stmt.close();
+            		} catch (SQLException e) {
+            			e.printStackTrace();
+            		}
+            	}
+            	if (con != null) {
+            		try {
+            			con.close();
+            		} catch (SQLException e) {
+            			e.printStackTrace();
+            		}
+            	}
+            }
 		}
-
-		// レコード取得
+/**********************
+* レコード取得
+***********************/
 		public boolean GetRecord(String code){
             Connection con = null;
             Statement stmt = null;
@@ -254,7 +310,9 @@ public class Hanamast {
             	}
             }
 		}
-		// マスタ内容のセット
+/**********************
+* マスタ内容のセット
+***********************/
 		public void SetData(HttpServletRequest request){
 			this.hanaCode = request.getParameter("code");
 			this.hanaBun = request.getParameter("bun");

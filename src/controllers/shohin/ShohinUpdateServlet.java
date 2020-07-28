@@ -30,7 +30,7 @@ public class ShohinUpdateServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 * データベースの更新処理
+	 * データの更新処理
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = (String)request.getParameter("_token");
@@ -47,7 +47,7 @@ public class ShohinUpdateServlet extends HttpServlet {
 					request.getSession().setAttribute("flush", "編集が完了しました。");
                 	request.getSession().setAttribute("_token", request.getSession().getId());
                     response.sendRedirect("/Hana_ai_system/shohin/index");
-//                    RequestDispatcher rd = request.getRequestDispatcher("/shohin/index");
+//                    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/shohin/edit.jsp");
 //                    rd.forward(request, response);
 				} else {
                     // 項目誤りで返却する

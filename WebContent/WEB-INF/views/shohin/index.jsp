@@ -30,7 +30,7 @@
                         <td><c:out value="${shohin.getHanaBiko()}" /></td>
                         <td>
                             <a href="<c:url value='/shohin/edit?cd=${shohin.getHanaCode()}&flg=${1}' />">編集  </a>
-                            <a href="<c:url value='/shohin/destroy?cd=${shohin.getHanaCode()}&flg=${2}' />">削除</a>
+                            <a href="<c:url value='/shohin/edit?cd=${shohin.getHanaCode()}&flg=${2}' />">削除</a>
                         </td>
                     </tr>
                 </c:forEach>

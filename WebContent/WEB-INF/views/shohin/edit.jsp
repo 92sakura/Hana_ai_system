@@ -17,9 +17,18 @@
 
         <c:choose>
             <c:when test="${shohin != null}">
-                <form method="POST" action="<c:url value='/shohin/update' />">
-                    <c:import url="_form.jsp" />
-                </form>
+            	<c:choose>
+            		<c:when test="${flg=='1'}">
+                		<form method="POST" action="<c:url value='/shohin/update' />">
+                    		<c:import url="_form.jsp" />
+                		</form>
+                	</c:when>
+             		<c:when test="${flg=='2'}">
+                		<form method="POST" action="<c:url value='/shohin/delete' />">
+                    		<c:import url="_form.jsp" />
+                		</form>
+                	</c:when>
+                </c:choose>
             </c:when>
             <c:otherwise>
                 <h2>商品マスタ　データエラー</h2>

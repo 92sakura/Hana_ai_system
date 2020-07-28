@@ -2,6 +2,13 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<script>
+	function confirmDestroy() {
+		if(confirm("本当に削除してよろしいですか？")) {
+           			document.forms[0].submit();
+		}
+	}
+</script>
 
 <c:choose>
 	<c:when test="${flg=='0' || shohin!=null}">
@@ -102,7 +109,7 @@
 		<input type="button" value="更新" onclick="submit();">
 	</c:when>
 		<c:when test="${flg=='2'}">
-		<input type="button" value="削除" onclick="submit();">
+		<input type="button" onclick="confirmDestroy();" value="削除" >
 	</c:when>
 
 </c:choose>
