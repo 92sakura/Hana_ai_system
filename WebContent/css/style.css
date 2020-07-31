@@ -32,7 +32,19 @@ h2 {
     color: #004000;
 }
 h3 {
-	font-size: 24px;
+  color: #6cb4e4;
+  text-align: center;
+  padding: 0.25em;
+  border-top: solid 2px #6cb4e4;
+  border-bottom: solid 2px #6cb4e4;
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+
+
+.align {
+	font-size: 16px;
+	text-align:right
 }
 
 li {
@@ -105,4 +117,7 @@ input[type="button"] {
    background-image: linear-gradient(0deg, #a7d9f5, #eaf6fd); /* グラデーション */
    border: 1px solid #3c7fb1; /* 枠線 */
    border-radius: 0.3em;      /* 角丸 */
+}
+.noborder {
+  border: 0px none;
 }

@@ -58,6 +58,7 @@ public class ShohinIndexServlet extends HttpServlet {
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
+        int Record_cnt = 0;
 
         try {
             // 1. ドライバのクラスをJava上で読み込む
@@ -72,9 +73,13 @@ public class ShohinIndexServlet extends HttpServlet {
 
             // 3. DBとやりとりする窓口（Statementオブジェクト）の作成
             stmt = con.createStatement();
+            rs = stmt.executeQuery("select count(*) from hana_master");
+            if (rs.next()){
+            	Record_cnt = rs.getInt(1);
+            }
 
             // 4. Select文の実行と結果を格納／代入
-            rs = stmt.executeQuery("select * from hana_master order by hanaCode");
+            rs = stmt.executeQuery(String.format("select * from hana_master order by hanaCode limit %s, 15",(page - 1)*15));
 
             // 5. 結果を保持する
             while (rs.next()) {
@@ -134,7 +139,7 @@ public class ShohinIndexServlet extends HttpServlet {
  * 商品マスタを表示
  */
         request.setAttribute("shodisp", so);
-        request.setAttribute("shodisp_count", so.size());
+        request.setAttribute("shodisp_count", Record_cnt);
         request.setAttribute("page", page);
 
         if(request.getSession().getAttribute("flush") != null) {

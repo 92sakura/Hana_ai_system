@@ -8,7 +8,16 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>商品マスタメンテ</h2>
+        <table width=100% class="noborder">
+        	<tr class="noborder">
+        		<td class="noborder">
+                	<h2>商品マスタメンテ</h2>
+                </td>
+                <td class="noborder align">
+        			<a href="<c:url value='/shohin/new?flg=${0}' />">新規登録</a>
+        		</td>
+        	</tr>
+        </table>
         <table id="shohin_list">
             <tbody>
                 <tr>
@@ -29,7 +38,8 @@
                         <td><c:out value="${shohin.getHanaTank()}" /></td>
                         <td><c:out value="${shohin.getHanaBiko()}" /></td>
                         <td>
-                            <a href="<c:url value='/shohin/edit?cd=${shohin.getHanaCode()}&flg=${1}' />">編集  </a>
+                            <a href="<c:url value='/shohin/edit?cd=${shohin.getHanaCode()}&flg=${1}' />">編集</a>
+                            &nbsp;&nbsp;
                             <a href="<c:url value='/shohin/edit?cd=${shohin.getHanaCode()}&flg=${2}' />">削除</a>
                         </td>
                     </tr>
@@ -50,10 +60,6 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/shohin/new?flg=${0}' />">商品の登録</a></p>
-
-
-
 
 
 

@@ -207,9 +207,9 @@ public class Hanamast {
             			);
             	// 3. DBとやりとりする窓口（Statementオブジェクト）の作成
             	stmt = con.createStatement();
-            	String sql = String.format("DELEE from Hana_master WHERE hanaCode = '%s' LIMIT 1",this.hanaCode);
-            	System.out.println(sql);
-//                stmt.execute(sql);
+            	String sql = String.format("DELETE from Hana_master WHERE hanaCode = '%s' LIMIT 1",this.hanaCode);
+//            	System.out.println(sql);
+                stmt.execute(sql);
             	return true;
             } catch (SQLException e) {
             	// DBとの処理で何らかのエラーがあった場合の例外
