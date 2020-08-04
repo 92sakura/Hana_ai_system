@@ -70,7 +70,34 @@ table {
     width: 100%;
     table-layout: fixed;
 }
-
+th.shohin_code
+{
+	width:20%;
+}
+th.shohin_bun
+{
+	width:10%;
+}
+th.shohin_name
+{
+	width:20%;
+}
+th.shohin_kana
+{
+	width:20%;
+}
+th.shohin_tank
+{
+	width:10%;
+}
+th.shohin_biko
+{
+	width:15%;
+}
+th.shohin_op
+{
+	width:15%;
+}
 th {
     width: 26%;
     padding: 10px 2%;
@@ -108,10 +135,7 @@ button {
     text-align: center;
     background-color: #adff2f;
 }
-input {
-	border:none;
-	background:none;
-}
+
 input[type="button"] {
    /* input要素のうちtype属性値がbuttonのものに対して装飾 */
    background-image: linear-gradient(0deg, #a7d9f5, #eaf6fd); /* グラデーション */
@@ -120,4 +144,8 @@ input[type="button"] {
 }
 .noborder {
   border: 0px none;
+}
+.validation {
+    float: right;
+    color: red;
 }

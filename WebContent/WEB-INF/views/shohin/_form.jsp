@@ -26,7 +26,7 @@
 		<table>
 			<tbody>
 				<tr>
-					<th>商品コード</th>
+					<th>商品コード<span class= "validation"> (半角4桁) </span></th>
 					<td>
 						<c:choose>
 							<c:when test="${flg=='0'}">
@@ -45,12 +45,19 @@
 								<c:out value="${shohin.getHanaBun()}" />
 							</c:when>
 							<c:otherwise>
-								<input type="text" name="bun" value="${shohin.getHanaBun()}" />
+								<select name="bun">
+									<option value="A" <c:out value="${shohin.getHanaBun()}" /> >A</option>
+									<option value="B" <c:out value="${shohin.getHanaBun()}" /> >B</option>
+									<option value="C" <c:out value="${shohin.getHanaBun()}" /> >C</option>
+									<option value="D" <c:out value="${shohin.getHanaBun()}" /> >D</option>
+									<option value="E" <c:out value="${shohin.getHanaBun()}" /> >E</option>
+								</select>
+<!--<input type="text" name="bun" value="${shohin.getHanaBun()}" />-->
 							</c:otherwise>
 						</c:choose></td>
 				</tr>
 				<tr>
-					<th>商品名</th>
+					<th>商品名<span class= "validation"> (全角20桁) </span></th>
 					<td><c:choose>
 							<c:when test="${flg=='2'}">
 								<c:out value="${shohin.getHanaName()}" />
@@ -60,7 +67,7 @@
 							</c:otherwise>
 						</c:choose></td>
 				<tr>
-					<th>商品名（カナ）</th>
+					<th>商品名（カナ）<span class= "validation"> (半角20桁) </span></th>
 					<td><c:choose>
 							<c:when test="${flg=='2'}">
 								<c:out value="${shohin.getHanaKana()}" />
@@ -82,7 +89,7 @@
 						</c:choose></td>
 				</tr>
 				<tr>
-					<th>備考</th>
+					<th>備考<span class= "validation"> (全角40桁) </span></th>
 					<td><c:choose>
 							<c:when test="${flg=='2'}">
 								<c:out value="${shohin.getHanaBiko()}" />

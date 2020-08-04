@@ -27,7 +27,7 @@
                     <th class="shohin_kana">商品名(カナ)</th>
                     <th class="shohin_tank">単価</th>
                     <th class="shohin_biko">備考</th>
-                    <th>操作</th>
+                    <th class="shohin_op">操作</th>
                 </tr>
                 <c:forEach var="shohin" items="${shodisp}" varStatus="status">
                     <tr class="row${status.count % 2}">
