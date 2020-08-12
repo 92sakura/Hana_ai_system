@@ -16,7 +16,7 @@
 		</div>
 		<div id = "popup" style = "visibility: hidden">
 			<span>連絡先：999-999-9999</span>
-			<span>ＵＲＬ：999-999-9999</span>
+			<!--<span>ＵＲＬ：999-999-9999</span>-->
 		</div>
 		<div id="content">
 			${param.content}
